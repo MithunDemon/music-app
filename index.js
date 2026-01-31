@@ -62,10 +62,10 @@ const makeAllPlays = () =>{
 Array.from(document.getElementsByClassName('songItemPlay')).forEach((element)=>{
     element.addEventListener('click' ,(e)=>{
         makeAllPlays();
-        index = parseInt(e.target.id);
+        songindex = parseInt(e.target.id);
         e.target.classList.remove('fa-play-circle');
         e.target.classList.add('fa-pause-circle');
-        audioElement.src = `m${index+1}.mpeg`;
+        audioElement.src = `m${songindex+1}.mpeg`;
         audioElement.currentTime = 0;
         audioElement.play();
         masterPlay.classList.remove('fa-play-circle');
@@ -85,7 +85,7 @@ document.getElementById('next').addEventListener('click', ()=>{
         songIndex += 1;
     }
 
-       audioElement.src = `songs/${songIndex+1}.mpeg`;
+       audioElement.src = `m${songIndex+1}.mpeg`;
         audioElement.currentTime = 0;
         audioElement.play();
         masterPlay.classList.remove('fa-play-circle');
@@ -117,6 +117,7 @@ document.getElementById('previous').addEventListener('click', ()=>{
         
 
 });
+
 
 
 
